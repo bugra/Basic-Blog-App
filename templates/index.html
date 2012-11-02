@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Blog!</title>
+	</head>
+
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+			width: 800px;
+			margin: 0 auto;
+			padding: 10px;
+		}
+		.error{
+			color: red;
+		}
+		label{
+			display: block;
+			font-size: 20px;
+		}
+		input[type=text]{
+			width: 400px;
+			font-size: 20px;
+		}
+		textarea{
+			width: 400px;
+			height: 200px;
+			font-size: 17px;
+			font-family: monospace;
+		}
+		input[type=submit]{
+			font-size: 24px;
+		}
+		hr{
+			margin: 20px auto;
+		}
+		.blog + .blog{
+			margin-top: 20px;
+		}
+		.blog-subject{
+			font-weight: bold;
+			width: 400px;
+			font-size: 20px;
+		}
+		.blog-content{
+			margin: 0;
+			font-size: 17px;
+		}
+		.blog-created{
+			text-align: right;
+			position: relative;
+		}
+
+	</style>
+
+	<body>
+		<h1>Blog!</h1>
+	</body>
+
+
+	<hr>
+	{% for blog in blogs %}
+	<div class="blog">
+		<div class="blog-subject">{{blog.subject}}</div>
+		<pre class="blog-created">{{blog.created}}</pre>
+		<pre class="blog-content">{{blog.content}}</pre>
+		<hr>
+	{% endfor %}
+</html>
